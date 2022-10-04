@@ -56,6 +56,33 @@ function submitDataOfUser(){
     });
 }
 
+function submitDataOfCar(){
+    const nameOfCar = $("#nomeCarro").val()
+    const modelOfCar = $("#modelo").val()
+    $.ajax({
+        "url": "http://localhost:8000/carinsert",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json; charset=UTF-8"
+        },
+        "data": JSON.stringify({
+            carName:nameOfCar,
+            model:modelOfCar
+        }),
+    }).done(function (response) {
+        if (response.success) {
+            $("#success-record-msg").css('display','block')
+
+            $("#nomeCarro").val('')
+            $("#modelo").val('')
+        }else{
+            console.log(response)
+            alert('deu ruim')
+        }
+    });
+}
+
 function closeSuccessMsg(){
     $("#success-record-msg").css('display','none')
 }
