@@ -64,3 +64,32 @@ form{
 #success-record-msg{
     display: none;
 }
+.error_record{
+    text-align: center;
+    font-weight: 700;
+    color: red;
+    padding: 5px;
+    width: 350px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background-color: #df3333;
+}
+
+.error_record > div{
+    display: inline-block; 
+    position: relative; 
+    top: -15px
+}
+
+.error_record > div > svg {
+    display: inline-block; 
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+}
+
+#error-record-msg{
+    display: none;
+}

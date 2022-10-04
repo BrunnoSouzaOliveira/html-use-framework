@@ -49,10 +49,16 @@ function submitDataOfUser(){
             $("#name").val('')
             $("#lastname").val('')
             $("#age").val('')
+        }else{
+            console.log(response)
+            alert('deu ruim')
         }
     });
 }
 
 function closeSuccessMsg(){
     $("#success-record-msg").css('display','none')
+}
+function closeFailureMsg(){
+    $("#error-record-msg").css('display','none')
 }
