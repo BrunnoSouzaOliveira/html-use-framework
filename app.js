@@ -39,7 +39,7 @@ function submitDataOfUser(){
         },
         "data": JSON.stringify({
             name:nameOfUser,
-            lastName:lastNameOfUser,
+            last_name:lastNameOfUser,
             age: ageOfUser
         }),
     }).done(function (response) {
@@ -50,8 +50,25 @@ function submitDataOfUser(){
             $("#lastname").val('')
             $("#age").val('')
         }else{
-            console.log(response)
-            alert('deu ruim')
+            let errorMsg;
+            let errorWidth = '350px'
+
+            if(response.missingAttribute === 'name'){
+                errorMsg = 'O campo de nome está ausente, favor preencher'
+                errorWidth = '415px'
+            }
+            if(response.missingAttribute === 'last_name'){
+                errorMsg = 'O campo de sobrenome está ausente, favor preencher'
+                errorWidth = '435px'
+            }
+            if(response.missingAttribute === 'age'){
+                errorMsg = 'O campo de idade está ausente, favor preencher'
+                errorWidth = '415px'
+            }
+
+            $("#error-record-msg").css('display','block')
+            $("#content-error-record-msg").html(errorMsg)
+            $("#error-record-msg").css('width')
         }
     });
 }
@@ -78,7 +95,7 @@ function submitDataOfCar(){
             $("#modelo").val('')
         }else{
             console.log(response)
-            alert('deu ruim')
+            $("#error-record-msg").css('display','block')
         }
     });
 }
