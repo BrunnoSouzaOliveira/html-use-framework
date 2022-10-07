@@ -3,6 +3,7 @@
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
+    margin-top: 180px;
 }
 header{
     text-align: center;
@@ -15,7 +16,7 @@ body > main > article{
 }
 footer{
     color: #fff;
-    background-color: #000;
+    background-color: rgb(0, 0, 0);
     height: 350px;
     text-align: center;
 }
@@ -34,7 +35,9 @@ form{
     border-radius: 15px;
     padding-top: 15px;
     margin-bottom: 50px;
+    color: #000000;
 }
+
 .success-record{
     text-align: center;
     font-weight: 700;
@@ -67,14 +70,14 @@ form{
 .error_record{
     text-align: center;
     font-weight: 700;
-    color: #ff8484;
+    color: red;
     padding: 20px;
     width: 440px;
     height: 5px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
-    background-color: #df3333;
+    background-color: #ff8484;
 }
 
 .error_record > div{

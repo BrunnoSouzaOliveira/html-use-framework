@@ -44,12 +44,16 @@ function submitDataOfUser(){
         }),
     }).done(function (response) {
         if (response.success) {
+            $("#error-record-msg").css('display','none')
+            
             $("#success-record-msg").css('display','block')
 
             $("#name").val('')
             $("#lastname").val('')
             $("#age").val('')
         }else{
+            $("#success-record-msg").css('display','none')
+            
             let errorMsg;
             let errorWidth = '350px'
 
@@ -68,7 +72,7 @@ function submitDataOfUser(){
 
             $("#error-record-msg").css('display','block')
             $("#content-error-record-msg").html(errorMsg)
-            $("#error-record-msg").css('width')
+            $("#error-record-msg").css('width',errorWidth)
         }
     });
 }
@@ -96,6 +100,66 @@ function submitDataOfCar(){
         }else{
             console.log(response)
             $("#error-record-msg").css('display','block')
+        }
+    });
+}
+
+function submitDataOfUserTrabalho(){
+    const nomeOfTheUser = $("#nome").val()
+    const sobrenomeOfTheUser = $("#sobrenome").val()
+    const idadeOfTheUser = $("#idade").val()
+    const cpfOfTheUser = $("#cpf").val()
+    const celularOfTheUser = $("#celular").val()
+    const fixoOfTheUser = $("#fixo").val()
+    $.ajax({
+        "url": "http://localhost:8000/insert-on-interface",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json; charset=UTF-8"
+        },
+        "data": JSON.stringify({
+            nomeUsuario:nomeOfTheUser,
+            sobrenomeUsuario:sobrenomeOfTheUser,
+            idade:idadeOfTheUser,
+            cpf:cpfOfTheUser,
+            celular:celularOfTheUser,
+            fixo:fixoOfTheUser
+        }),
+    }).done(function (response) {
+        if (response.success) {
+            $("#success-record-msg").css('display','block')
+
+            $("#nome").val('')
+            $("#sobrenome").val('')
+            $("#idade").val('')
+            $("#cpf").val('')
+            $("#celular").val('')
+            $("#fixo").val('')
+        }else{
+            let errorMsg;
+            let errorWidth = '350px'
+
+            if(response.missingAttribute === 'nomeUsuario'){
+                errorMsg = 'O campo de nome está ausente, favor preencher'
+                errorWidth = '415px'
+            }
+            if(response.missingAttribute === 'sobrenomeUsuario'){
+                errorMsg = 'O campo de sobrenome está ausente, favor preencher'
+                errorWidth = '435px'
+            }
+            if(response.missingAttribute === 'idade'){
+                errorMsg = 'O campo de idade está ausente, favor preencher'
+                errorWidth = '415px'
+            }
+            if(response.missingAttribute === 'cpf'){
+                errorMsg = 'O campo de cpf está ausente, favor preencher'
+                errorWidth = '415px'
+            }
+
+            $("#error-record-msg").css('display','block')
+            $("#content-error-record-msg").html(errorMsg)
+            $("#error-record-msg").css('width')
         }
     });
 }
