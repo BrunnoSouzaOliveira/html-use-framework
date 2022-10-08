@@ -6,49 +6,46 @@
         <title>Login do Usuario</title>
     </head>
     <body>
+        <div class="d-flex flex-column justify-content-center w-100 h-100"></div>
         <main>
-            <article>
-                <h3>Preencha os Dados a Seguir</h3>
-            </article>
             <form>
-                <label> <b>Nome*</b> </label>
-                <input type="text" placeholder="Insira o nome do Usuario" id="nome">
-                <br>
-                <br>
+                <div class="form">
+                    <article class="title">
+                        <h3>Preencha os Dados a Seguir</h3>
+                    </article>
+                    <div class="subtitle">Vamos criar sua conta!</div>
+                    <div class="input-container ic1">
+                      <input id="nome" class="input" type="text" placeholder=" " />
+                      <div class="cut"></div>
+                      <label for="nome" class="placeholder">Nome*</label>
+                    </div>
+                    <div class="input-container ic2">
+                      <input id="sobrenome" class="input" type="text" placeholder=" " />
+                      <div class="cut"></div>
+                      <label for="sobrenome" class="placeholder">Sobrenome*</label>
+                    </div>
+                    <div class="input-container ic2">
+                      <input id="email" class="input" type="text" placeholder=" " />
+                      <div class="cut cut-short"></div>
+                      <label for="email" class="placeholder">Email*</label>
+                    </div>
+                    <div class="input-container ic2">
+                      <input id="idade" class="input" type="text" placeholder=" " />
+                      <div class="cut cut-short"></div>
+                      <label for="idade" class="placeholder">Idade*</label>
+                    </div>
+                    <div class="input-container ic2">
+                      <input id="telefone" class="input" type="text" placeholder=" " />
+                      <div class="cut cut-short"></div>
+                      <label for="telefone" class="placeholder">Telefone*</label>
+                    </div>
+                    <br>
+                    <button class="btn fifth" type="button" onclick="submitDataOfUserTrabalho()">Enviar</button>
+                    <br>
+                    <br>
+                    <span class="subtitle">Feito por: Brunno de Souza Oliveira</span>
+                </div>
                 
-                <label> <b>Sobrenome*</b> </label>
-                <input type="text" placeholder="Insira o sobrenome do Usuario" id="sobrenome">
-                <br>
-                <br>
-                
-                <label> <b>Idade*</b> </label>
-                <input type="number" placeholder="Idade" id="idade" min="0" max="100">
-                <br>
-                <br>
-                
-                <label> <b>CPF*</b> </label>
-                <input type="text" placeholder="Insira o CPF" id="cpf">
-                <br>
-                <br>
-
-                <label> <b>Telefones</b> </label>
-                <br>
-                <br>
-                
-                <label> <b>Celular</b> </label>
-                <input type="text" placeholder="Insira o seu Telefone Celular" id="celular" min="0" max="100">
-                <br>
-                <br>
-                
-                <label> <b>Fixo</b> </label>
-                <input type="text" placeholder="Insira o seu Telefone Fixo" id="fixo" min="0" max="100">
-                <br>
-                <br>
-                
-                <button class="btn fifth" type="button" onclick="submitDataOfUserTrabalho()">Enviar</button>
-                <br>
-                <br>
-                <span>Feito por: Brunno de Souza Oliveira</span>
             </form>
             <div id="success-record-msg" class="success-record">
                 <div>

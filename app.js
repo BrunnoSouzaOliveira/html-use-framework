@@ -108,9 +108,8 @@ function submitDataOfUserTrabalho(){
     const nomeOfTheUser = $("#nome").val()
     const sobrenomeOfTheUser = $("#sobrenome").val()
     const idadeOfTheUser = $("#idade").val()
-    const cpfOfTheUser = $("#cpf").val()
-    const celularOfTheUser = $("#celular").val()
-    const fixoOfTheUser = $("#fixo").val()
+    const emailOfTheUser = $("#email").val()
+    const telefoneOfTheUser = $("#telefone").val()
     $.ajax({
         "url": "http://localhost:8000/insert-on-interface",
         "method": "POST",
@@ -122,20 +121,19 @@ function submitDataOfUserTrabalho(){
             nomeUsuario:nomeOfTheUser,
             sobrenomeUsuario:sobrenomeOfTheUser,
             idade:idadeOfTheUser,
-            cpf:cpfOfTheUser,
-            celular:celularOfTheUser,
-            fixo:fixoOfTheUser
+            email:emailOfTheUser,
+            telefone:telefoneOfTheUser
         }),
     }).done(function (response) {
+        console.log(response);
         if (response.success) {
             $("#success-record-msg").css('display','block')
 
             $("#nome").val('')
             $("#sobrenome").val('')
             $("#idade").val('')
-            $("#cpf").val('')
-            $("#celular").val('')
-            $("#fixo").val('')
+            $("#email").val('')
+            $("#telefone").val('')
         }else{
             let errorMsg;
             let errorWidth = '350px'
@@ -152,8 +150,12 @@ function submitDataOfUserTrabalho(){
                 errorMsg = 'O campo de idade está ausente, favor preencher'
                 errorWidth = '415px'
             }
-            if(response.missingAttribute === 'cpf'){
-                errorMsg = 'O campo de cpf está ausente, favor preencher'
+            if(response.missingAttribute === 'email'){
+                errorMsg = 'O campo de email está ausente, favor preencher'
+                errorWidth = '415px'
+            }
+            if(response.missingAttribute === 'telefone'){
+                errorMsg = 'O campo de telefone está ausente, favor preencher'
                 errorWidth = '415px'
             }
 
