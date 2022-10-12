@@ -154,10 +154,6 @@ function submitDataOfUserTrabalho(){
                 errorMsg = 'O campo de email está ausente, favor preencher'
                 errorWidth = '415px'
             }
-            if(response.missingAttribute === 'telefone'){
-                errorMsg = 'O campo de telefone está ausente, favor preencher'
-                errorWidth = '415px'
-            }
 
             $("#error-record-msg").css('display','block')
             $("#content-error-record-msg").html(errorMsg)

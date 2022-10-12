@@ -6,7 +6,7 @@ body{
     margin-top: 180px;
         font-family: Arial, Helvetica, sans-serif;
         margin-top: 180px;
-        background: linear-gradient(-45deg, #0267ff, #fbff00, #ff8800, #ff0000);
+        background: linear-gradient(-45deg, #8e44ad, #c848ff, #5c1879, #d096e9);
         background-size: 200% 200%;
         animation: gradient 15s ease infinite;
         height: 100vh;
@@ -179,7 +179,7 @@ form{
   }
 .fifth {
     border-color: #8e44ad;
-    border-radius: 0;
+    border-radius: 35px;
     color: #8e44ad;
     position: relative;
     overflow: hidden;
